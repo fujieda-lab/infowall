@@ -1,0 +1,684 @@
+@charset "UTF-8";
+
+/* 共通 */
+html {
+  font-size: calc(100vh / 192);
+}
+body {
+  font-family: 'Josefin Sans', sans-serif;
+}
+a {
+  color: #ffffff;
+}
+.container {
+  width : calc(100vh * 0.5625) ;
+  height: 100vh;
+  /* 確認用 */
+  margin: 0 auto;
+  border-right: 1px gray solid;
+  border-left: 1px gray solid;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 400px){
+ .container, .wrap {
+    width: 100%;
+ }
+}
+
+.content {
+  margin: 0;
+}
+.wrap {
+  width: auto;
+}
+
+.main {
+  background-color: #000000;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: calc(100vh *0.040625)!important; /*78px*/
+}
+.article {
+  height: 62.5vh;
+}
+
+.weather .main {
+  background-image: url("https://www2020.seibidou.jp/infowall/wp-content/uploads/2020/10/bg_ectangle.svg");
+}
+.clock .main {
+  background-image: url("https://www2020.seibidou.jp/infowall/wp-content/uploads/2020/10/bg_ectangle.svg");
+}
+.test .main {
+  background-image: url("https://www2020.seibidou.jp/infowall/wp-content/uploads/2020/10/bg_ectangle.svg");
+}
+
+
+.header-container {
+  display: none;
+}
+.article-header {
+  display: none;
+}
+.article-footer {
+  display: none;
+}
+.under-entry-content {
+  display: none;
+}
+
+.entry-content>*, .demo .entry-content p {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.entry-content {
+  width: 100%;
+  height: calc(100vh*0.91875);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.content_main {
+  height: inherit;
+  flex: 1;
+}
+svg {
+  width: 100%;
+  height: auto;
+}
+.pager-post-navi{
+  margin: auto 0 0;
+}
+
+.col_justify {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+}
+.col_vertical {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  margin: 0.75rem 0;
+}
+
+#footer, .footer {
+  display: none;
+}
+
+/* layout*/
+ .flexD_row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.parts_head {
+  align-self: flex-start;
+}
+
+.article h2{
+  width: 100%;
+  font-size:  6rem;
+  line-height: 9rem;
+  text-align: center;
+  margin: 0 auto;
+  padding:1rem 0;
+  border-bottom: 2px solid #ffffff;
+}
+.fz-18px {
+  font-size: 3.875rem;
+}
+
+/**/
+/* //共通 */
+
+/* Logo */
+#Logo {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+#Logo .logoimage {
+  width: 36rem;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+#Logo .logoimage #wordmark path,#Logo .logoimage .bar{-webkit-animation-direction:normal;animation-direction:normal}
+#Logo.page-end{-webkit-animation-name:none!important;animation-name:none!important}
+#Logo.page-end .logoimage .bar{-webkit-animation-name:bar-reverse;animation-name:bar-reverse;animation-direction:reverse;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}
+#Logo.page-end .logoimage #wordmark path{-webkit-animation-name:word-reverse;animation-name:word-reverse;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards}
+#Logo .bar{-webkit-animation-name:bar;animation-name:bar;-webkit-animation-timing-function:cubic-bezier(.17,.67,.53,.93);animation-timing-function:cubic-bezier(.17,.67,.53,.93);-webkit-animation-iteration-count:1;animation-iteration-count:1;transform-origin:left;-webkit-animation-fill-mode:backwards;animation-fill-mode:backwards}
+#Logo #wordmark path,#Logo .bar{-webkit-animation-duration:.8s;animation-duration:.8s}
+#Logo #wordmark path{-webkit-animation-name:word;animation-name:word;-webkit-animation-timing-function:cubic-bezier(.17,.67,.53,.93);animation-timing-function:cubic-bezier(.17,.67,.53,.93);-webkit-animation-iteration-count:1;animation-iteration-count:1;transform-origin:center;-webkit-animation-fill-mode:backwards;animation-fill-mode:backwards}
+#Logo #i{-webkit-animation-delay:1.2s;animation-delay:1.2s}
+#Logo #n{-webkit-animation-delay:1.3s;animation-delay:1.3s}
+#Logo #f{-webkit-animation-delay:1.4s;animation-delay:1.4s}
+#Logo #o{-webkit-animation-delay:1.5s;animation-delay:1.5s}
+#Logo #w{-webkit-animation-delay:1.6s;animation-delay:1.6s}
+#Logo #a{-webkit-animation-delay:1.7s;animation-delay:1.7s}
+#Logo #l{-webkit-animation-delay:1.8s;animation-delay:1.8s}
+#Logo #l2{-webkit-animation-delay:1.9s;animation-delay:1.9s}
+@-webkit-keyframes word{
+  0%{transform:translateY(-20px);opacity:0}
+  to{transform:translateY(0);opacity:1}
+}
+@keyframes word{
+  0%{transform:translateY(-20px);opacity:0}
+  to{transform:translateY(0);opacity:1}
+}
+@-webkit-keyframes word-reverse{
+  0%{transform:translateY(0);opacity:1}
+  to{transform:translateY(-20px);opacity:0}
+}
+@keyframes word-reverse{
+  0%{transform:translateY(0);opacity:1}
+  to{transform:translateY(-20px);opacity:0}
+}
+#Logo #_1{-webkit-animation-delay:.2s;animation-delay:.2s}
+#Logo #_2{-webkit-animation-delay:.4s;animation-delay:.4s}
+#Logo #_3{-webkit-animation-delay:.6s;animation-delay:.6s}
+#Logo #_4{-webkit-animation-delay:.7s;animation-delay:.7s}
+#Logo #_5{-webkit-animation-delay:.8s;animation-delay:.8s}
+#Logo #_6{-webkit-animation-delay:.9s;animation-delay:.9s}
+#Logo #_7{-webkit-animation-delay:1s;animation-delay:1s}
+#Logo #_8{-webkit-animation-delay:1.1s;animation-delay:1.1s}
+#Logo #_9{-webkit-animation-delay:1.2s;animation-delay:1.2s}
+#Logo #Logo.page-end #_9{-webkit-animation-delay:.2s;animation-delay:.2s}
+#Logo #Logo.page-end #_8{-webkit-animation-delay:.4s;animation-delay:.4s}
+#Logo #Logo.page-end #_7{-webkit-animation-delay:.6s;animation-delay:.6s}
+#Logo #Logo.page-end #_6{-webkit-animation-delay:.7s;animation-delay:.7s}
+#Logo #Logo.page-end #_5{-webkit-animation-delay:.8s;animation-delay:.8s}
+#Logo #Logo.page-end #_4{-webkit-animation-delay:.9s;animation-delay:.9s}
+#Logo #Logo.page-end #_3{-webkit-animation-delay:1s;animation-delay:1s}
+#Logo #Logo.page-end #_2{-webkit-animation-delay:1.1s;animation-delay:1.1s}
+#Logo #Logo.page-end #_1{-webkit-animation-delay:1.2s;animation-delay:1.2s}
+@-webkit-keyframes bar{
+  0%{transform:rotateY(60deg);opacity:0}
+  to{transform:rotateY(0);opacity:1}
+}
+@keyframes bar{
+  0%{transform:rotateY(60deg);opacity:0}
+  to{transform:rotateY(0);opacity:1}
+}
+@-webkit-keyframes bar-reverse{
+  0%{transform:rotateY(60deg);opacity:0}
+  to{transform:rotateY(0);opacity:1}
+}
+@keyframes bar-reverse{
+  0%{transform:rotateY(60deg);opacity:0}
+  to{transform:rotateY(0);opacity:1}
+}
+/* //Logo */
+
+/* weather */
+.weather_info {
+  padding: 4rem 0 1rem;
+}
+
+.weather_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: #ffffff;
+}
+
+.temp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 55%;
+  padding: 8rem 0 2rem;
+  font-size: 14rem;
+}
+.max_img, .min_img {
+  width: 14rem;
+  height: auto;
+  margin: 0 5rem;
+}
+.min_img {
+  transform: rotate(180deg);
+}
+.rainy_percent_img {
+  width: 28rem;
+  height: auto;
+  margin: 0 5rem;
+}
+
+.temp_row {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline
+}
+.temp_max, .temp_min, .rainy_percent {
+  font-size: 4.2rem;
+  align-items: center;
+}
+.temp_max_no, .temp_min_no, .rainy_percent_no {
+  font-size: 8rem;
+  padding-top:1rem;
+}
+.temp_max img, .temp_min img, .rainy_percent img {
+  width: 5rem;
+}
+
+.wetherImg {
+  width: 20rem;
+  height: auto;
+}
+
+.weather_today .wetherImg {
+  width: calc(100vh*0.2);
+  height: auto;
+}
+
+
+.weather_info_week {
+  font-size: 5rem;
+  color: #ffffff;
+  margin: 0 auto;
+}
+.weather_info_week td {
+  font-size: 2.875rem;
+  margin: 0 auto;
+  text-align: center;
+  height: 2.75em;
+}
+.weather_info_week td.weathr_mark {
+  height: 4em;
+}
+
+.weather_info_week .max_img, .weather_info_week .min_img {
+  width: 3rem;
+  height: auto;
+  margin: 0 1rem 0 0;
+}
+
+.table_temp {
+  font-size: 3rem;
+  display: flex;
+}
+table, table th, table td {
+  background-color: rgba(0,0,0,0);
+  border-color: transparent;
+}
+/* //weather */
+
+/* Clock */
+.clock .weather_today .wetherImg {
+  width: auto;
+  height: calc(100vh*0.04375);
+}
+#myClock_time {
+  display: flex;
+  font-size: 15rem;
+  letter-spacing: 0.12em;
+  margin: 0 auto;
+}
+#myClock_time_h, #myClock_time_m {
+  margin: 0.25rem;
+}
+#myClock_time_h {
+  margin-right: 1.5rem;
+}
+
+.calendar {
+  margin: -7.2rem 0 0;
+}
+#myClock_day {
+  font-size: 6rem;
+  margin: 0.75rem 2rem 0 0;
+  
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-align: center;
+}
+#myClock_day span {
+  margin: 1rem;
+}
+#myClock_wd {
+  font-size: 4.75rem;
+  margin: -0.25rem 0 0;
+  text-align: center;
+}
+#myClock_time .dot-wrap {
+  width: 1.25rem;
+  margin: 0 1.75rem 0 0;
+}
+#myClock_time .dot-wrap img {
+  vertical-align: middle;
+  -webkit-animation-name: dot;
+  animation-name: dot;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 0;
+  animation-delay: 0;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+ol, ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.box .dot-wrap img {
+  height: 2rem;
+}
+
+.clock_world {
+  font-size: 3.875rem;
+  height: 18rem;
+  overflow: hidden;
+  margin-top: 8rem;
+}
+.clock_world .dot-wrap {
+  width: 1.25rem;
+  margin: 0 0.75rem 0 0;
+}
+.clock_world .time_day {
+  margin-top: -4.2rem;
+}
+
+.clock {
+  display:flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  font-family: bebas-neue-by-fontfabric,sans-serif;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: .2em;
+  margin-left: 20px;
+}
+
+.clock_circle{
+  height: 42.1875vh;
+  background-image: url("https://www2020.seibidou.jp/infowall/wp-content/uploads/2020/10/clock_base.svg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center center;
+  display:flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.variation-bar .box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.clock_inner {
+  margin-bottom:5rem;
+}
+
+.name {
+  font-family: 'Lato', sans-serif;
+}
+
+.time_difference {
+  display: block;
+  color: #000;
+  background-color: #ffffff;
+  padding: 0 2rem;
+  border-radius: 10rem;
+}
+
+
+.country_day {
+  margin-left: -3rem;
+}
+
+.time_day .clock {
+  margin-left: calc(3rem + 20px);
+}
+
+/* //Clock */
+
+/* News */
+.news_header {
+  width: 100%;
+  height: calc(100vh * 0.12);
+  margin: 0 0 2rem;
+}
+.news_header .time_weather {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.news_header #myClock_time {
+  font-size:10rem;
+}
+
+.news_header .weather_info,
+.news_header .col_vertical {
+  width: auto;
+}
+.news_header .weather_info {
+  padding: 0;
+  margin-left: 2rem;
+}
+.news_header .weather_today_only_mark .wetherImg {
+  width: calc((100vh*0.05625)*0.875);
+  height: auto;
+}
+
+.news_header .calendar {
+  margin: -6rem 0 0;
+}
+.news ul {
+  border-bottom: 2px solid #ffffff;
+}
+.news ul li {
+  font-size:  4rem;
+}
+.news_qr {
+  width:25%;
+  margin: 0 auto;
+}
+/* //News */
+
+iframe {
+  width: 100%;
+  height:60vh;
+}
+
+.wp-image-242 {
+  max-width: none;
+  height: 50vh;
+
+}
+.wp-image-243 {
+  height:25rem;
+}
+
+/* twitter */
+h2.info {
+  color: #ffffff;
+  font-size: 5.4rem;
+  font-weight: 400;
+  background-color: #000;
+  border-bottom: none;
+  border-color: #000;
+}
+h2.info:before {
+  content: '';
+  display: inline-block;
+  width: 5.4rem;
+  height: 5.4rem;
+  background-image: url('https://www2020.seibidou.jp/infowall/wp-content/uploads/2020/11/mark_info.svg');
+  background-repeat: no-repeat; 
+  background-size: contain;
+}
+
+/* //twitter */
+.twitter_shop {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+.ts_inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.ts_img {
+  width: 57.5%;
+}
+.ts_txt {
+  width: 37.5%;
+  background-color: #8D6D37;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ts_cap {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.pR .ts_img { order: 2; }
+.pR .ts_txt { order: 1; }
+.pR .ts_cap { order: 3; }
+
+.pR .ts_txt {
+  background-color: #382D1A;
+}
+.ts_web {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ts_web div{
+  padding: 0 1rem;
+}
+
+/* booth */
+.booth {
+  width: 100%;
+  display:flex;
+  margin-top: 5rem;
+}
+.booth_img {
+  width: 85%;
+  display:flex;
+  justify-content: flex-end; 
+  
+}
+.booth_direction {
+  width: 15%;
+  display:flex;
+  align-items: flex-end;
+}
+
+
+/* Dock */
+#Dock {
+  width: 85%;
+  height: calc(100vh * 0.135);
+  align-self: flex-end;
+  padding: 0 3rem;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  bottom: 0;
+}
+/* //Dock */
+
+/* fadeIn,fadeOutアニメーション設定 */
+.xx_content_main {
+  animation: fadeIn 3s, fadeOut 3s 5.5s forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity:1;
+  }
+  to {
+    opacity:0;
+  }
+}
+/* //fadeIn,fadeOutアニメーション設定 */
+
+.svg_clock svg {
+  display: flex;
+}
+#svgClock {
+  justify-content: center;
+  fill: #ffffff;
+  margin: 0 auto;
+}
+
+/* slider-swiper */
+.swiper-container {
+  width: 100%;
+  height: calc(100vh * 0.68);
+}
+
+.swiper-slide {
+  width: 250px;
+  height: auto;
+  overflow: visible;
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.mainvisual {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+.swiper-button-white,
+.swiper-pagination-bullet {
+  display: none !important;
+}
+/* //slider-swiper */
+.swiper-slide.swiper-slide-active {
+  opacity: 1!important;
+}
+.swiper-slide {
+  opacity: 0!important;
+}
+.swiper-slide.swiper-slide-prev {
+  opacity: 0!important;
+}

@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+/* SVG表示 */
+img[src*='.svg']{
+  width: 100%;
+  height: auto;
+}
+
+/* コントロールパネル */
+/* 初期設定 */
+html {
+  font-size: calc(100vh / 192);
+}
+body {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  
+}
+.container {
+  width : calc(100vh *0.5625) ;
+  height: 100%;
+  padding : 6rem;
+  /* 確認用 */
+  margin: 0 auto;
+  border: 1px gray solid;
+}
+.content {
+  height: 100%;
+  margin-top: 0px;
+}
+.content-in {
+  height: 100%;
+}
+.wrap {
+  width: 100%;
+}
+.main{
+  background-color: #000000;
+}
+.article {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-content: center;
+}
+.article-header.entry-header {
+  width: 100%;
+  height: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.article-footer.entry-footer {
+  width: 100%;
+  height: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.article h1 {
+  display: none;
+}
+.entry-content {
+  width: 100%;
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*justify-content: space-between;*/
+  align-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 0;
+}
+
+.mobile-footer-menu-buttons.mobile-menu-buttons {
+  display: none;
+}
+
+.cf::after {
+  clear: both;
+  content: normal;
+  display: inline;
+}
+
+.under-entry-content {
+  position: absolute;
+  width: 100%;
+  top: 100vh;
+  left: 0;
+}
+#footer {
+  width: inherit;
+  position: absolute;
+  top: calc(100vh + 240px);
+  left: calc((100vw / 2) - ((100vh *0.5625)/2));
+  padding-right: 3rem;
+}
+
+.fz-18px {
+  font-size: 3.6rem;
+}
+/* //初期設定 */
+
+.logoimage {
+  width: 40rem;
+  height: 40rem;
+}
+
+
+#wpadminbar {
+  display:none;
+}
+
+#header-container,
+.date-tags {
+  display:none;
+}
+
+.single-dsp_contents .main .article {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wp-block-columns {
+  width: 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.wp-block-image img {
+  width: 100% !important;
+  max-width: initial !important;
+}
+
+.entry-content>*, .entry-content p {
+  margin-top: 0;
+  text-align: center;
+}
+
+/* fadeIn,fadeOutアニメーション設定 */
+.logged-in.single .main {
+  animation: 0;
+}
+
+.single .main {
+  animation: fadeIn 3s, fadeOut 3s 5s forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity:0;
+  }
+  to {
+    opacity:1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity:1;
+  }
+  to {
+    opacity:0;
+  }
+}
+
+#tinymce.main  {
+  animation: 0;
+}
+/* //fadeIn,fadeOutアニメーション設定 */
